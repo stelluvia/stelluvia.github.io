@@ -65,7 +65,7 @@
 body {
   padding-top: 66px;
   padding-bottom: 3rem;
-  color: rgb(var(--bs-tertiary-color-rgb));
+  color: var(--st-dark);
   background-color: var(--st-dark);
 }
 
@@ -87,6 +87,11 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+.navbar .container-fluid {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
 /* HERO */
 
 .hero-block {
@@ -99,6 +104,8 @@ body {
 .hero-container {
   position: relative;
   z-index: 3;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .hero-logo {
@@ -136,6 +143,7 @@ body {
   padding-top: 7rem;
   padding-bottom: 7rem;
   background-color: white;
+  margin-top: -1px;
 }
 
 .featurette-heading {
@@ -166,6 +174,11 @@ body {
 .carousel-caption {
   top: 5rem;
   z-index: 10;
+  color: white !important;
+}
+
+.carousel .carousel-control-next-icon, .carousel .carousel-control-prev-icon {
+  filter: none !important;
 }
 
 /* Declare heights because of positioning of img element */
@@ -184,7 +197,7 @@ body {
   width: 5rem;
   height: 5rem;
   aspect-ratio: 1;
-  border: 4px solid var(--bs-dark);
+  border: 4px solid var(--st-dark);
   border-radius: 50%;
   overflow: hidden;
 }
@@ -197,7 +210,11 @@ body {
   mask-position: center;
   -webkit-mask-size: contain;
   -webkit-mask-position: center;
-  background-color: var(--bs-dark);
+  background-color: var(--st-dark);
+}
+
+.carousel-icon-btn-outer {
+  background-color: white!important;
 }
 
 .carousel-icon-btn-outer:hover {
@@ -274,6 +291,10 @@ body {
   padding-top: 1rem;
 }
 
+.contact-section form input,  .contact-section form textarea {
+  background-color: white!important;
+}
+
 /* FOOTER */
 .footer-content {
   color: white;
@@ -288,6 +309,117 @@ body {
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
+
+/* XL & Below */
+@media (max-width: 1400px) {
+}
+
+/* L & below */
+@media (max-width: 1200px) {
+  .hero-container {
+    margin-top: 0rem;
+    margin-left: 2rem;
+    max-width: 1200px;
+  }
+
+  .section-block {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .carousel-caption {
+    top: 3rem;
+  }
+}
+
+/* M & below */
+@media (max-width: 992px) {
+  .hero-container {
+    margin-left: 0rem;
+  }
+
+  .carousel-item {
+    height: 25rem;
+  }
+
+  .carousel-caption {
+    top: 3rem;
+  }
+}
+
+/* S & XS */
+@media (max-width: 768px) {
+  .hero-block {
+    height: 35rem;
+  }
+
+  .hero-img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .hero-img-overlay {
+    background-image: linear-gradient(180deg,
+                  rgba(15,15,35,1),
+                  rgba(255,255,255, 0));
+  }
+
+  .hero-container {
+    margin-left: 2rem;
+  }
+
+  .section-block {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .featurette-heading {
+    margin-top: 2rem;
+  }
+
+  .carousel-caption {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 80%;
+    margin: auto;
+  }
+
+  .carousel-container {
+    display: flex;
+  }
+}
+
+/* XS */
+@media (max-width: 576px) {
+  .navbar .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-block {
+    height: 30rem;
+  }
+}
+
+@media (max-width: 372px) {
+  .navbar-title {
+    display: none;
+  }
+  .hero-block {
+    height: 25rem;
+  }
+  .hero-container {
+    margin-left: 0;
+  }
+  .carousel-item {
+    height: 30rem;
+  }
+}
+
+
+
+
 
 @media (min-width: 40em) {
   /* Bump up size of carousel content */
