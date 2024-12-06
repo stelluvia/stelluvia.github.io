@@ -268,7 +268,8 @@
         <div class="col-md-2"></div>
         <div class="col-md-8">
           <form
-            action="https://api.web3forms.com/submit"
+            id="contact-form"
+            action="https://formsubmit.co/nicholas@stelluvia.com"
             method="POST"
           >
             <input type="hidden" name="access_key" value="ece19670-be6b-44bc-a7e7-adecf6923249">
@@ -287,7 +288,16 @@
               <textarea id="contactMessage" name="contactMessage" class="form-control h-100" rows="8"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary bg-st-blue border-st-blue">Submit</button>
+            <button type="submit" id="contact-submit-btn" 
+              class="btn btn-primary bg-st-blue border-st-blue g-recaptcha"
+              data-sitekey="6LcJVpQqAAAAAAMvg-e39y7PMJL3CU7mH2resl1u" 
+              data-callback='onSubmit' 
+              data-action='submit'
+            >
+              Submit
+            </button>
+
+            <input type="hidden" name="_subject" value="New Form submission from your website!">
           </form>
         </div>
       </div>
@@ -310,5 +320,12 @@
 </main>
 
 <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+ function onSubmit(token) {
+   document.getElementById("contact-form").submit();
+ }
+</script>
+
 </body>
 </html>
